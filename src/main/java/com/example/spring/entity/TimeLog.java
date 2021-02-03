@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Builder
 @ToString
 
-@Entity
+//@Entity
 @Table(name = "account_activity")
 public class TimeLog {
     @Id

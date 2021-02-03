@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Builder
 @ToString
 
-@Entity
+//@Entity
 @Table(name = "category")
 public class Category {
     @Id

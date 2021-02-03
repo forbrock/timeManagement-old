@@ -14,10 +14,10 @@ import java.time.LocalDate;
 @Builder
 @ToString
 
-@Entity
-@Table(name = "account_activity",
+//@Entity
+@Table(name = "users_activities",
         uniqueConstraints = {@UniqueConstraint(columnNames={"account_id", "activity_id"})})
-public class AccountActivity {
+public class UserActivity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
