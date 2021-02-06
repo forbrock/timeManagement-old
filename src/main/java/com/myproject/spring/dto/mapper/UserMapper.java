@@ -10,8 +10,6 @@ import org.mapstruct.Mapping;
 public interface UserMapper {
     User userLoginDtoToUser(UserLoginDto userLoginDto);
 
-    @Mapping(target = "role", constant = "USER")
-    @Mapping(target = "state", constant = "ACTIVE")
     User userRegisterDtoToUser(UserRegisterDto userRegisterDto);
 
     UserLoginDto userToUserLoginDto(User user);

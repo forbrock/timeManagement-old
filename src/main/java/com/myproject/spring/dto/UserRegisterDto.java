@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@PasswordMatches(message = "passwords do not match")
+@PasswordMatches
 public class UserRegisterDto {
     @NotEmpty(message = "first name shouldn't be empty")
     private String firstName;
@@ -31,9 +31,9 @@ public class UserRegisterDto {
     @NotEmpty(message = "please confirm your password")
     private String matchingPassword;
 
-    private Role role;
+    private Role role = Role.USER;
 
-    private State state;
+    private State state = State.ACTIVE;
 
     private final LocalDateTime created = LocalDateTime.now();
 }

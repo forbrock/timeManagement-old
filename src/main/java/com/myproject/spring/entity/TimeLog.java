@@ -4,7 +4,7 @@ import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -20,11 +20,14 @@ public class TimeLog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "duration")
     private Integer duration;
+
     @Column(name = "start_date")
     @CreatedDate
-    private LocalDate startDate;
+    private LocalDateTime startDate;
+
     @Column(name = "account_activity_id")
     private Long accountActivityId;
 }

@@ -37,12 +37,12 @@ public class RegistrationController {
         }
 
         try {
-            // TODO: check password encoding
+            // TODO: authenticate and redirect user to main page after successful registration
             User registered = userService.registerNewAccount(registerDto);
         } catch (UserAlreadyExistException e) {
             // TODO: add logger
             bindingResult.rejectValue("email", "user.email",
-                    "An account for this username/email already exists.");
+                    "An account for this email already exists.");
             return "registration";
         }
         return "redirect:/login";

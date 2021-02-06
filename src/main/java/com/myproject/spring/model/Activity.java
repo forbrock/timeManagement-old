@@ -1,11 +1,11 @@
-package com.myproject.spring.entity;
+package com.myproject.spring.model;
 
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -13,24 +13,26 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Builder
 @ToString
-
-//@Entity
-@Table(name = "activity")
+@Entity
+@Table(name = "activities")
 public class Activity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "category_id", nullable = false)
-    private Long categoryId;
+
     @Column(name = "name", unique = true, nullable = false)
     private String name;
-    @Column(name = "activity_state", nullable = false)
-    private Integer activityState;
+
+    @Column(name = "state", length = 20, columnDefinition = "varchar(20) default 'ACTIVE'", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private State state = State.ACTIVE;
+
     @Column(name = "created")
     @CreatedDate
-    private LocalDate created;
+    private LocalDateTime created;
+
     @Column(name = "last_modified")
     @LastModifiedDate
-    private LocalDate lastModified;
+    private LocalDateTime lastModified;
 }

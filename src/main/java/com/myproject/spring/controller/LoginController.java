@@ -19,7 +19,7 @@ public class LoginController {
         return "success";
     }
 
-    @PostMapping("/auth/login")
+    @PostMapping("/login")
     public String showMainPage() {
         return "redirect:/index";
     }

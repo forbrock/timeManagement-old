@@ -35,11 +35,11 @@ public class User {
 
     @Column(name = "state", length = 20, columnDefinition = "varchar(20) default 'ACTIVE'", nullable = false)
     @Enumerated(EnumType.STRING)
-    private State state;
+    private State state = State.ACTIVE;
 
     @Column(name = "role", length = 20, columnDefinition = "varchar(20) default 'USER'", nullable = false)
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Role role = Role.USER;
 
     @Column(name = "created")
     @CreatedDate

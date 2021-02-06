@@ -14,19 +14,17 @@
     <form class="form-signin" method="post" action="/auth/login">
         <h2 class="form-signin-heading">Sign in</h2>
 
-<!-- need to generate when user logged out -->
-<!--        <div class="alert alert-success" role="alert">You have been signed out</div>-->
-<!-- need to generate when wrong credentials were passed -->
-<!--        <div class="alert alert-danger" role="alert">Bad credentials</div>-->
-
+        <!-- <div th:if="{param.logout}" class="alert alert-success" role="alert">You have been signed out</div> -->
+                
+        <div th:if="${loginError}" class="alert alert-danger" role="alert">Wrong email or password</div>
         <p>
-            <label for="username" class="sr-only">Username</label>
             <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
         </p>
         <p>
-            <label for="password" class="sr-only">Password</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            <input type="password" id="password" name="password" class="form-control" 
+                placeholder="Password" required>
         </p>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
         <div class="my-sm-3 m-3 text-right"><a href="/auth/registration">Sign up</a></div>
     </form>
