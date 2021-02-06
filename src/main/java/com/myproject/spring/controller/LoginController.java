@@ -20,7 +20,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String showMainPage() {
+    public String redirectToUserController() {
         return "redirect:/index";
     }
 }
