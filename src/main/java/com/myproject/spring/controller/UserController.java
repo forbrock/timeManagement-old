@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.security.Principal;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/index")
 @PreAuthorize("hasAuthority('read')")
 public class UserController {
 
